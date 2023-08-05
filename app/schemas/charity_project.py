@@ -32,9 +32,10 @@ class CharityProjectUpdate(CharityProjectBase):
 
     @validator('fully_invested')
     def fully_invested_not_edit(cls, value: bool):
-        if value is True:
+        if value:
             raise ValueError('Закрытый проект нельзя редактировать')
         return value
+
 
     @validator('invested_amount')
     def invested_amount_exit(cls, value: bool):

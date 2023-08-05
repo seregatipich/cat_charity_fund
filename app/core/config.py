@@ -1,4 +1,4 @@
-import logging
+from logging import getLogger
 from logging.config import dictConfig
 from typing import Optional
 
@@ -49,4 +49,4 @@ class LogConfig(BaseModel):
 
 
 dictConfig(LogConfig().dict())
-logger = logging.getLogger("myapp")
+logger = getLogger("myapp")
